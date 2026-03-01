@@ -1,0 +1,83 @@
+# ============================================================
+# CONFIGURACIÓN - Predicción Geopedológica
+# Cuenca del Río Ceibo
+# ============================================================
+# Edita este archivo con tus rutas locales antes de ejecutar.
+
+# --- Rutas de datos ---
+paths:
+  # Directorio donde se guardarán los resultados
+  output_dir: "outputs/"
+
+  # Puntos de entrenamiento (calicatas) en formato GeoPackage
+  training_points: "data/General_calicatas_f.gpkg"
+
+  # Límite de la cuenca en formato Shapefile
+  watershed_shapefile: "data/general.shp"
+
+  # Rasters ambientales (nombre: ruta)
+  rasters:
+    NDVI:          "data/rasters/NDVIGEN.tif"
+    Geologia:      "data/rasters/GEOLOGIAGEN.tif"
+    Geomorfologia: "data/rasters/GEOMORFGEN.tif"
+    TempMax:       "data/rasters/CHIRTSGEN.tif"
+    Precipitacion: "data/rasters/CHIRPSGEN.tif"
+    Hillshade:     "data/rasters/HILLSHADEGEN.tif"
+    Pendiente:     "data/rasters/PENDIENTEGEN.tif"
+    DEM:           "data/rasters/DEM_GEN.tif"
+    Rugosidad:     "data/rasters/RUGOSIDADGEN.tif"
+    Geomorph:      "data/rasters/GeomorphonsGEN.tif"
+    UsoSuelo:      "data/rasters/USOGEN.tif"
+
+# --- Columna objetivo ---
+target_column: "Orden"  # Columna con las clases de suelo a predecir
+
+# --- Sistema de coordenadas ---
+# EPSG a usar cuando la cuenca esté en geográfico (grados)
+projected_crs: "EPSG:32617"  # UTM 17N — ajusta a tu zona si es necesario
+
+# --- Parámetros de división train/test ---
+split:
+  test_size: 0.30          # 30% para test
+  random_state: 42
+  min_samples_per_class: 4 # Clases con menos muestras van al train
+
+# --- Parámetros de predicción espacial ---
+prediction:
+  output_resolution_m: 30.0  # Resolución en metros
+  buffer_m: 500              # Buffer alrededor de la cuenca
+  batch_size: 100000         # Píxeles por batch (ajusta según RAM)
+  smoothing_kernel: 3        # Tamaño de kernel para suavizado (píxeles)
+  min_area_pixels: 50        # Área mínima de parche tras suavizado
+
+# --- Hiperparámetros de modelos ---
+models:
+  random_forest:
+    n_estimators: 150
+    max_depth: 15
+    min_samples_split: 10
+    min_samples_leaf: 4
+    max_features: "sqrt"
+    max_samples: 0.7
+    random_state: 42
+
+  xgboost:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.03
+    subsample: 0.8
+    colsample_bytree: 0.8
+    colsample_bylevel: 0.8
+    reg_alpha: 1.0
+    reg_lambda: 2.0
+    random_state: 123
+
+  catboost:
+    iterations: 200
+    depth: 8
+    learning_rate: 0.05
+    l2_leaf_reg: 10
+    random_strength: 2.0
+    subsample: 0.75
+    bootstrap_type: "Bernoulli"
+    random_seed: 456
