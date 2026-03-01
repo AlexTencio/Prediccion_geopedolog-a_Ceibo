@@ -1,10 +1,10 @@
-# 🗺️ Predicción Geopedológica — Cuenca del Río Ceibo
+#  Predicción Geopedológica — Cuenca del Río Ceibo
 
 Clasificación de órdenes de suelo mediante ensamble de tres modelos de machine learning (Random Forest, XGBoost, CatBoost) con estrategias de regularización diversas y predicción espacial raster.
 
 ---
 
-## 📋 Requisitos del sistema
+##  Requisitos del sistema
 
 - Python 3.10+
 - GDAL (se recomienda instalar via `conda-forge`)
@@ -12,11 +12,11 @@ Clasificación de órdenes de suelo mediante ensamble de tres modelos de machine
 
 ---
 
-## ⚙️ Instalación
+##  Instalación
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/TU_USUARIO/soil-prediction.git
+git https://github.com/AlexTencio/Prediccion_geopedolog-a_Ceibo.git
 cd soil-prediction
 ```
 
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📂 Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 soil-prediction/
@@ -60,7 +60,7 @@ soil-prediction/
 
 ---
 
-## 🗂️ Datos necesarios
+##  Datos necesarios
 
 | Archivo | Descripción |
 |---|---|
@@ -80,7 +80,7 @@ soil-prediction/
 
 ---
 
-## ⚡ Uso rápido
+##  Uso rápido
 
 ### 1. Configurar rutas
 
@@ -123,7 +123,7 @@ outputs/
 
 ---
 
-## 🤖 Modelos y estrategias
+##  Modelos y estrategias
 
 | Modelo | Estrategia | Clave de diversidad |
 |---|---|---|
@@ -156,9 +156,9 @@ models:
 
 ---
 
-## 🔍 Verificación de resultados
+##  Verificación de resultados
 
-Los mapas `.tif` pueden abrirse en **QGIS** o **ArcGIS**. Los valores de píxel corresponden a índices de clase (1-based); usa el `label_encoder_completo.joblib` para recuperar los nombres:
+Los rasters `.tif` pueden abrirse en **QGIS** o **ArcGIS**. Los valores de píxel corresponden a índices de clase (1-based); usa el `label_encoder_completo.joblib` para recuperar los nombres:
 
 ```python
 import joblib
@@ -169,17 +169,18 @@ print(le.classes_)  # ['Entisol', 'Inceptisol', 'Mollisol', ...]
 
 ---
 
-## 📚 Cita / Referencia
+##  Cita / Referencia
 
 Si usas este código en una publicación, por favor cita:
 
 ```
-[Nombre del autor] (2025). Modelado Geopedológico de la Cuenca del Río Ceibo
-mediante Random Forest, XGBoost y CatBoost. [Tesis / Repositorio GitHub].
+Remitirse a la tesis en formato digital o físico (bibliotecas de la Universidad de Costa Rica).
+Tencio-Moya, A (2025). Modelado Geopedológico de la Cuenca del Río Ceibo
+mediante Random Forest, XGBoost y CatBoost. Tesis: Clasificación supervisada de unidades geopedológicas para cuenca del río Ceibo, Buenos Aires, Puntarenas. https://github.com/AlexTencio/Prediccion_geopedolog-a_Ceibo.git
 ```
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 MIT — libre para uso académico y comercial con atribución.
