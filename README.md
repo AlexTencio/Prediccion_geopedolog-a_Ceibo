@@ -4,12 +4,12 @@ Clasificación de órdenes de suelo mediante ensamble de tres modelos de machine
 
 ---
 
-##  Requisitos del sistema
+##  Consideraciones importantes
 
-- Python 3.10+
+- Se utilizó Python 3.10+
 - GDAL (se recomienda instalar via `conda-forge`)
-- ~4 GB RAM libres para la predicción espacial (ajustable vía `batch_size` en el config)
-
+- 4 GB RAM libres para la predicción espacial (ajustable vía `batch_size` en el config)
+- Tener en cuenta la escala de cuenca a utilizar. Si es muy pequeña como la utilizada en la tesis, remitirse a este para entender el proceso de extracción por escalas.
 ---
 
 ##  Instalación
