@@ -2,7 +2,6 @@
 soil_prediction.py
 ==================
 Modelado y Predicción Geopedológica - Cuenca del Río Ceibo
-Versión: FINAL DIVERSO — compatible con GitHub
 
 Uso:
     python soil_prediction.py                        # usa config.yaml por defecto
