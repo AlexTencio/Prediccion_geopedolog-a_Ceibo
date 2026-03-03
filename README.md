@@ -175,8 +175,7 @@ Si usas este código en una publicación, por favor cita:
 
 ```
 Remitirse a la tesis en formato digital o físico (bibliotecas de la Universidad de Costa Rica).
-Tencio-Moya, A (2025). Modelado Geopedológico de la Cuenca del Río Ceibo
-mediante Random Forest, XGBoost y CatBoost. Tesis: Clasificación supervisada de unidades geopedológicas para cuenca del río Ceibo, Buenos Aires, Puntarenas. https://github.com/AlexTencio/Prediccion_geopedolog-a_Ceibo.git
+Tencio, A (2025). Modelado Geopedológico mediante Random Forest, XGBoost y CatBoost. Tesis: Clasificación supervisada de unidades geopedológicas para cuenca del río Ceibo, Buenos Aires, Puntarenas. https://github.com/AlexTencio/Prediccion_geopedolog-a_Ceibo.git
 ```
 
 ---
